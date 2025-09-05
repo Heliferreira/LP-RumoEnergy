@@ -570,48 +570,86 @@ footer .copyright {
 }
 
 /* =============================
-   Ajustes para Mobile
+   Ajustes para Mobile (responsivo)
 ============================= */
 @media (max-width: 768px) {
-  /* Hero */
+  /* HERO */
   .hero {
-    height: auto;
-    padding: 4rem 1.5rem;
+    height: auto; /* ajusta altura automaticamente */
+    padding: 3rem 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
   }
 
   .logo-top {
-    max-width: 300px; /* logo menor no mobile */
-    position: relative;
-    top: 0;
-    margin-bottom: 1rem;
+    max-width: 220px; /* logo menor */
+    position: static; /* evita sobreposição */
+    margin: 0 auto 1.5rem;
+    display: block;
+  }
+
+  .hero-content {
+    margin-top: 0; /* remove espaçamento exagerado */
   }
 
   .hero-content h1 {
     font-size: 1.8rem;
-    line-height: 1.3;
+    line-height: 2.2rem;
+    margin-bottom: 1rem;
   }
 
   .hero-content p {
     font-size: 1rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.2rem;
   }
 
   .cta-btn {
     font-size: 1rem;
-    padding: 0.8rem 1.5rem;
-    border-radius: 8px; /* mais quadrado no mobile */
+    padding: 0.9rem 1.5rem;
+    border-radius: 12px;
   }
 
-  /* Serviços */
+  /* CALCULADORA */
+  .calculator {
+    padding: 2rem 1rem;
+  }
+
+  .calc-box {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .calc-box input,
+  .calc-box button {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  /* SERVIÇOS */
+  .services {
+    padding: 3rem 1rem;
+  }
+
   .service-grid {
-    grid-template-columns: 1fr; /* tudo em 1 coluna */
-    gap: 1.5rem;
+    grid-template-columns: 1fr; /* 1 card por linha */
+    gap: 1.2rem;
   }
 
-  /* Depoimentos */
+  .service {
+    padding: 2rem 1.5rem;
+  }
+
+  /* DEPOIMENTOS */
+  .testimonials {
+    padding: 3rem 1rem;
+  }
+
   .cards {
-    grid-template-columns: 1fr; /* 1 por linha */
-    gap: 1.5rem;
+    grid-template-columns: 1fr; /* 1 depoimento por linha */
+    gap: 1.2rem;
   }
 
   .card {
@@ -619,28 +657,34 @@ footer .copyright {
   }
 
   /* FAQ */
-  .faq details {
-    max-width: 100%;
-    font-size: 0.95rem;
+  .faq {
+    padding: 3rem 1rem;
   }
 
-  /* Formulário */
-  .lead-form form {
-    width: 100%;
-    padding: 0 1rem;
+  .faq details {
+    max-width: 100%;
+    padding: 1rem;
+  }
+
+  /* FORMULÁRIO */
+  .lead-form {
+    padding: 2.5rem 1rem;
   }
 
   .lead-form input,
   .lead-form button {
-    font-size: 1rem;
     width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
   }
 
-  /* Rodapé */
+  /* FOOTER */
+  footer {
+    padding: 1.5rem 1rem;
+  }
+
   .social-btn a {
-    flex-direction: row;
+    width: 100%;
     justify-content: center;
-    font-size: 0.95rem;
-    padding: 0.8rem 1rem;
   }
 }
