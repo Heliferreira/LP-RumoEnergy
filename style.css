@@ -704,18 +704,18 @@ footer .copyright {
     width: 100%;
   }
 
-  /* CTA WHATSAPP */
-  .cta-whatsapp {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin-top: 1.5rem;
-  }
-
-  .cta-whatsapp .cta-btn {
-    margin: 0 auto;
-    display: block; /* garante centralização */
-    text-align: center;
-  }
+  /* CTA WHATSAPP - unificado */
+.cta-whatsapp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 1.5rem;
 }
+
+.cta-whatsapp .cta-btn {
+  margin: 0 auto;
+  display: inline-block;
+  text-align: center;
+}
+  }
