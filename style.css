@@ -637,10 +637,13 @@ footer .copyright {
     grid-template-columns: 1fr; /* 1 card por linha */
     gap: 1.2rem;
   }
-
-  .service {
-    padding: 2rem 1.5rem;
-  }
+.service {
+  padding: 2rem 1.5rem;
+  min-height: 220px; /* define altura mínima padrão */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
   /* DEPOIMENTOS */
   .testimonials {
@@ -684,7 +687,21 @@ footer .copyright {
   }
 
   .social-btn a {
-    width: 100%;
-    justify-content: center;
-  }
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 250px; /* limite */
+  margin: 0 auto; /* centraliza */
+  width: 100%; /* se quiser ocupar o máximo dentro do limite */
+}
+
+}
+
+.cta-whatsapp {
+  text-align: center; /* centraliza dentro da seção */
+}
+
+.cta-btn {
+  display: inline-block; /* garante que fique centralizado */
+  margin: 0 auto; /* centraliza no container */
 }
