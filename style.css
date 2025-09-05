@@ -635,9 +635,11 @@ footer .copyright {
 
 .service-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  align-items: stretch; /* força todos os cards a terem a mesma altura */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin: 3rem auto;
+  max-width: 1100px;
+  justify-items: center;
 }
 
 .service {
@@ -706,14 +708,17 @@ footer .copyright {
   width: 100%; /* se quiser ocupar o máximo dentro do limite */
 }
 
-}
-
 .cta-whatsapp {
-  text-align: center; /* centraliza o botão */
+  background: transparent;
   padding: 2rem 0;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100% !important;
 }
 
 .cta-whatsapp .cta-btn {
-  margin: 0 auto; /* remove alinhamento errado */
   display: inline-block;
+  margin: 0 auto;
+}
 }
