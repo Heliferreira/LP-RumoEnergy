@@ -1,0 +1,571 @@
+/* =============================
+   Base
+============================= */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #fff;
+  color: #333;
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin: 0.5rem 0;
+}
+
+p {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  margin: 0.5rem 0 1rem;
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  height: 28vh; /* altura mais equilibrada */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  background: url("assets/energy.jpeg") no-repeat center/cover;
+  overflow: hidden;
+  padding: 2rem 1rem;
+}
+
+/* Overlay animado futurista */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(270deg,
+    rgba(45, 157, 76, 0.7),    /* verde */
+    rgba(255, 127, 42, 0.7),   /* laranja */
+    rgba(255, 200, 42, 0.6)    /* amarelo solar */
+  );
+  background-size: 600% 600%;
+  animation: energiaFluxo 3s ease infinite; /* transição mais rápida */
+  z-index: 0;
+}
+
+/* Partículas energéticas */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: particulas 10s linear infinite;
+  z-index: 1;
+  mix-blend-mode: overlay;
+}
+
+@keyframes energiaFluxo {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes particulas {
+  from { background-position: 0 0; }
+  to { background-position: 120px 240px; }
+}
+
+/* Logo */
+.logo-top {
+  position: absolute;
+  top: 30px; /* distância do topo */
+  max-width: 600px; /* tamanho maior da logo */
+  z-index: 2;
+}
+
+/* Conteúdo central */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  margin-top: 100px; /* controla o espaço entre logo e texto */
+}
+
+.hero-content h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin: 1rem 0 0.5rem;
+}
+
+/* Efeito Glow Neon só na palavra "Energia" */
+
+/*.hero-content h1 span {
+  color: #00ff99; /* verde energia */
+/*  text-shadow: 0 0 8px rgba(0, 255, 153, 0.8),
+               0 0 16px rgba(0, 255, 153, 0.6),
+               0 0 24px rgba(0, 255, 153, 0.4);
+}
+
+
+.hero-content .sub {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+
+/* Botão CTA */
+.cta-btn {
+  background: #00ffae;
+  color: black;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 1rem 2.5rem;
+  border-radius: 40px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cta-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 255, 174, 0.8);
+}
+
+
+
+/* =============================
+   Botões
+============================= */
+.cta-btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  margin-top: 1rem;
+  background: #00ffb7;
+  color: #111;
+  font-weight: bold;
+  border-radius: 30px;
+  box-shadow: 0 5px 20px rgba(0,255,183,0.5);
+  text-decoration: none;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  animation: pulse 2.5s infinite;
+}
+.cta-btn:hover {
+  background: #00d89a;
+  transform: scale(1.08);
+}
+
+/* Shine effect */
+.cta-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 80%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.4) 0%,
+    rgba(255, 255, 255, 0.1) 60%
+  );
+  transform: skewX(-25deg);
+  animation: shine 4s infinite;
+}
+
+@keyframes shine {
+  0% { left: -100%; }
+  50% { left: 120%; }
+  100% { left: 120%; }
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(0, 255, 183, 0.6); }
+  70% { box-shadow: 0 0 0 20px rgba(0, 255, 183, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 255, 183, 0); }
+}
+
+/* =============================
+   Calculadora
+============================= */
+.calculator {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.calc-box {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+.calc-box input {
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  min-width: 150px;
+}
+.calc-box button {
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  background: #2d9d4c;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.calc-box button:hover {
+  background: #227a3b;
+  transform: scale(1.05);
+}
+
+/* =============================
+   Serviços
+============================= */
+.services {
+  padding: 4rem 2rem;
+  background: #dff9e6;
+  text-align: center;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin: 3rem auto;
+  max-width: 1100px;
+  justify-items: center;
+}
+
+.service {
+  background: #fff4e6;
+  padding: 3rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+  opacity: 0;
+  transform: translateY(40px);
+  text-align: center;
+}
+.service:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+  background: #ffe6cc;
+}
+.service i {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #ff7f2a;
+  transition: color 0.3s;
+}
+.service:hover i {
+  color: #2d9d4c;
+}
+
+/* =============================
+   Depoimentos
+============================= */
+.testimonials {
+  padding: 4rem 2rem;
+  background: #f4fff8;
+  text-align: center;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 em cima e 3 embaixo */
+  gap: 2rem;
+  margin: 3rem auto;
+  max-width: 1100px;
+  justify-items: center;
+}
+.card {
+  background: #fff4e6;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+  transition: transform 0.3s, background 0.3s;
+  opacity: 0;
+  transform: translateY(40px);
+  text-align: center;
+}
+.card:hover {
+  transform: translateY(-6px);
+  background: #ffe6cc;
+}
+.testimonial-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  border: 3px solid #ff7f2a;
+  transition: border 0.3s;
+}
+.card:hover .testimonial-img {
+  border-color: #2d9d4c;
+}
+.card h4 {
+  margin-top: 0.8rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* =============================
+   FAQ
+============================= */
+.faq {
+  padding: 4rem 2rem;
+  background: #f4fff8;
+  text-align: center;
+}
+.faq details {
+  margin: 1rem auto;
+  padding: 1.2rem 1.5rem;
+  max-width: 800px;
+  border: none;
+  border-radius: 12px;
+  background: #fff4e6;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: all 0.3s, background 0.3s;
+  opacity: 0;
+  transform: translateY(40px);
+}
+.faq details:hover {
+  background: #ffe6cc;
+}
+.faq summary {
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* =============================
+   Animações de scroll
+============================= */
+.reveal {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  transition: all 0.8s ease-out;
+}
+
+/* =============================
+   Responsividade
+============================= */
+@media (max-width: 900px) {
+  .service-grid,
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .service-grid,
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =============================
+   Footer
+============================= */
+footer {
+  padding: 2rem;
+  background: #111;
+  color: white;
+  text-align: center;
+}
+footer .cta-btn {
+  margin-top: 1rem;
+}
+/* Formulário de Leads */
+.lead-form {
+  padding: 3rem 2rem;
+  background: #111;
+  color: white;
+  text-align: center;
+}
+
+.lead-form h2 {
+  margin-bottom: 1rem;
+  color: #00ffb7;
+}
+
+.lead-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 400px;
+  margin: auto;
+}
+
+.lead-form input {
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+.lead-form button {
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  background: #00ffb7;
+  color: #111;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.lead-form button:hover {
+  background: #00d89a;
+  transform: scale(1.05);
+}
+
+#msg-retorno {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #00ffb7;
+}
+
+/* Versão clara do formulário */
+.lead-form.branco {
+  background: #fff; /* fundo branco */
+  color: #222;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.lead-form.branco h2 {
+  color: #ff7f2a; /* laranja Rumo Energy */
+  margin-bottom: 1.5rem;
+}
+
+.lead-form.branco input {
+  width: 100%;
+  max-width: 400px;
+  margin: 0.5rem auto;
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  display: block;
+}
+
+.lead-form.branco button {
+  margin-top: 1rem;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  background: #00d89a; /* verde da marca */
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.lead-form.branco button:hover {
+  background: #00b37a;
+  transform: scale(1.05);
+}
+
+/* Centraliza e remove o fundo branco */
+.cta-whatsapp {
+  background: #e9fdf4; /* verde claro igual ao fundo */
+  text-align: center; /* centraliza o botão */
+  padding: 2rem 0; /* espaçamento vertical */
+}
+
+/* Caso o fundo verde claro seja do body, pode usar transparente */
+.cta-whatsapp {
+  background: transparent;
+}
+
+body {
+  background: #eafdf3; /* cor base */
+}
+
+/* Cada seção mantém seu estilo */
+.services {
+  background: #dff9e6; /* verde suave */
+}
+
+.testimonials {
+  background: #f4fff8; /* verde claro */
+}
+
+.faq {
+  background: #f4fff8; /* verde claro */
+}
+
+.lead-form {
+  background: #f2fff7; /* verde muito suave */
+  color: #111;
+}
+
+
+footer {
+  background: #f2fff7; /* verde claro do fundo */
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.social-btn a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff; /* botão branco */
+  border: 2px solid #ddd;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  border-radius: 6px; /* se quiser quadrado total, pode trocar para 0px */
+  transition: all 0.3s ease;
+}
+
+.social-btn a:hover {
+  background: #f2f2f2;
+  border-color: #bbb;
+}
+
+.social-btn img {
+  height: 24px;
+  width: 24px;
+}
+
+footer .copyright {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #333;
+}
+/* Centralizar o CTA abaixo dos serviços */
+.cta-servicos {
+  grid-column: 2; 
+  display: flex;
+  justify-content: center; /* centraliza horizontalmente */
+  margin-top: 2rem; /* espaço acima do botão */
+}
+
+.lead-header {
+  display: inline-flex;
+  align-items: center;       /* centraliza verticalmente */
+  justify-content: center;   /* centraliza horizontalmente */
+  background: #eafdf3;       /* mesmo verde claro da seção */
+  padding: 1rem 2rem;        /* respiro dentro do card */
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  border: 2px solid #ff7f2a; /* borda laranja */
+}
+
+.lead-header h2 {
+  margin: 0;
+  font-size: 1.5rem;         
+  font-weight: bold;
+  color: #3f3f3f !important;   /* força preto */
+  text-align: center;
+}
+

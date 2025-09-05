@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rumo Energy</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Fontes -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Hero -->
+  <header class="hero">
+    <img src="assets/energy.png" alt="Rumo Energy" class="logo logo-top">
+    <div class="hero-content">
+      <h1><span>Energia</span> Inteligente para um futuro sustentável</h1>
+      <p>Energia Solar • Carregadores Elétricos • Automação • Segurança • Elétrica comercial e residêncial</p>
+      <a href="https://wa.me/5541987285450" target="_blank" class="cta-btn">
+        🚀 Quero entrar em contato agora!
+      </a>
+    </div>
+  </header>
+
+  <!-- Calculadora -->
+  <section class="calculator">
+    <h2>Descubra quanto você pode economizar</h2>
+    <p>Insira o valor médio da sua conta de luz:</p>
+    <div class="calc-box">
+      <input type="number" id="bill" placeholder="Ex: 500">
+      <button onclick="calcularEconomia()">Calcular</button>
+    </div>
+    <p id="resultado"></p>
+  </section>
+
+  <!-- Serviços -->
+  <section class="services">
+    <h2>⚡ Nossas Soluções Tecnológicas</h2>
+    <div class="service-grid">
+      <div class="service">
+        <i class="fas fa-solar-panel"></i>
+        <h3>Energia Solar</h3>
+        <p>Economia de até 95% com tecnologia fotovoltaica de ponta.</p>
+      </div>
+      <div class="service">
+        <i class="fas fa-charging-station"></i>
+        <h3>Carregadores Elétricos</h3>
+        <p>Infraestrutura moderna para veículos elétricos.</p>
+      </div>
+      <div class="service">
+        <i class="fas fa-home"></i>
+        <h3>Automação Residencial</h3>
+        <p>Controle inteligente da sua casa pelo celular.</p>
+      </div>
+      <div class="service">
+        <i class="fas fa-bolt"></i>
+        <h3>Elétrica Completa</h3>
+        <p>Projetos elétricos modernos e seguros.</p>
+      </div>
+      <div class="service">
+        <i class="fas fa-lock"></i>
+        <h3>Segurança</h3>
+        <p>Sistemas de monitoramento com IA e alarmes integrados.</p>
+      </div>
+      <div class="service">
+        <i class="fas fa-lightbulb"></i>
+        <h3>Iluminação de Ambientes</h3>
+        <p>Projetos de iluminação interna e externa com design e eficiência.</p>
+      </div>
+     
+      <div class="cta-servicos">
+  <a href="https://wa.me/5541987285450" target="_blank" class="cta-btn">
+    🚀 Quero falar com um consultor
+  </a>
+</div>
+ 
+  </section>
+
+  <!-- Depoimentos -->
+  <section class="testimonials">
+    <h2>🌟 O que dizem nossos clientes</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="assets/client1.png" alt="Cliente João" class="testimonial-img">
+        <p>"Minha conta caiu quase 95%! Estou impressionado."</p>
+        <h4>Fabiano Costa</h4>
+      </div>
+      <div class="card">
+        <img src="assets/client2.png" alt="Cliente Maria" class="testimonial-img">
+        <p>"Equipe muito educada e profissional."</p>
+        <h4>Juliana Machado</h4>
+      </div>
+      <div class="card">
+        <img src="assets/client3.png" alt="Cliente Ricardo" class="testimonial-img">
+        <p>"Agora consigo tomar banhos mais demorados depois daquele dia cansativo no trabalho sem culpa nenhuma."</p>
+        <h4>Ricardo Amaral</h4>
+      </div>
+      <div class="card">
+        <img src="assets/client4.png" alt="Cliente Ana" class="testimonial-img">
+        <p>"Precisava de mais segurança por passar o dia todo fora de casa, agora controlo tudo no meu celular."</p>
+        <h4>Ana Carolina</h4>
+      </div>
+      <div class="card">
+        <img src="assets/client5.png" alt="Cliente Lucas" class="testimonial-img">
+        <p>"Atendimento excelente e instalação super rápida."</p>
+        <h4>Lucas Faustino</h4>
+      </div>
+      <div class="card">
+        <img src="assets/client6.png" alt="Cliente Carla" class="testimonial-img">
+        <p>"Minha residência ficou muito mais moderna e eficiente."</p>
+        <h4>Carla Albuquerque</h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="lead-form branco">
+  <div class="lead-header">
+    <h2>Receba novidades e promoções exclusivas</h2>
+  </div>
+  <form id="leadForm">
+    <input type="text" name="nome" placeholder="Seu nome" required>
+    <input type="tel" name="telefone" placeholder="Seu número de WhatsApp" required>
+    <input type="email" name="email" placeholder="Seu melhor e-mail" required>
+    <button type="submit">Quero Receber</button>
+  </form>
+  <p id="msg-retorno"></p>
+</section>
+
+
+  <!-- FAQ -->
+  <section class="faq">
+    <h2>❓ Perguntas Frequentes</h2>
+    <details>
+      <summary>Quanto posso economizar com energia solar?</summary>
+      <p>Até 95% dependendo da região e do consumo.</p>
+    </details>
+    <details>
+      <summary>Posso financiar?</summary>
+      <p>Sim! Temos linhas de financiamento acessíveis.</p>
+    </details>
+    <details>
+      <summary>Funciona em dias nublados?</summary>
+      <p>Sim, continua gerando mesmo com baixa luminosidade.</p>
+    </details>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <div class="social-btn">
+      <a href="https://instagram.com/heliferreira.energy" target="_blank">
+        <img src="assets/instagram.png" alt="Instagram">
+        <span>Siga-nos no Instagram</span>
+      </a>
+    </div>
+    <p class="copyright">© 2025 Rumo Energy - Todos os direitos reservados</p>
+  </footer>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>
