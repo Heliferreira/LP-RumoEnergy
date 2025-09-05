@@ -633,40 +633,37 @@ footer .copyright {
     padding: 3rem 1rem;
   }
 
-  .service-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-    align-items: stretch; /* força todos os cards a mesma altura */
-  }
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* sempre 2 colunas */
+  gap: 1.5rem;
+}
 
   .service {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 280px;
-    height: 100%; /* garante que preencha igualmente */
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 280px; /* garante mesma altura */
+}
 
   /* DEPOIMENTOS */
   .testimonials {
     padding: 3rem 1rem;
   }
 
-  .cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    align-items: stretch; /* mesma altura */
-  }
+ .cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 colunas no mobile */
+  gap: 1.5rem;
+  align-items: stretch; /* força mesma altura */
+}
 
-  .card {
-    min-height: 250px;
-    height: 100%; /* corrige altura desigual */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
+.card {
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
   /* FAQ */
   .faq {
