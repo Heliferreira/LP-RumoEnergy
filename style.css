@@ -569,6 +569,20 @@ footer .copyright {
   text-align: center;
 }
 
+/* Layout padrão (desktop) */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colunas certinho */
+  gap: 2rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colunas certinho */
+  gap: 2rem;
+}
+
+
 /* =============================
    Ajustes para Mobile (responsivo)
 ============================= */
