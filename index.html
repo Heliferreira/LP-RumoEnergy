@@ -163,5 +163,23 @@
 
   <!-- Script -->
   <script src="script.js"></script>
+<script>
+  document.getElementById("leadForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // impede o reload da página
+
+    // pega o elemento de mensagem
+    const msg = document.getElementById("msg-retorno");
+
+    // mostra a mensagem
+    msg.textContent = "✅ Seus dados foram enviados com sucesso!";
+    msg.style.color = "green";
+    msg.style.fontWeight = "600";
+
+    // limpa os campos
+    this.reset();
+  });
+</script>
+
+
 </body>
 </html>
